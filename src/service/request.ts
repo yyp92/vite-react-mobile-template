@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {message} from 'antd'
+import {Toast} from 'antd-mobile'
 import {sessionCache} from '@/utils'
 import {BASE_URL, TIMEOUT} from './config'
 
@@ -34,7 +34,10 @@ instance.interceptors.response.use(
         } = err ?? {}
 
         if (!!code) {
-            message.error(msg)
+            Toast.show({
+                icon: 'fail',
+                content: msg,
+            })
         }
     }
 )
