@@ -31,10 +31,9 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "less": "^4.2.0",
     "postcss": "^8.4.33",
     "postcss-px-to-viewport": "^1.1.1",
-    "sass-embedded": "^1.89.0",
+    "sass": "^1.89.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
