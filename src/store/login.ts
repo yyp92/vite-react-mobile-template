@@ -1,7 +1,7 @@
 /**
  * * 用户信息
  */
-import { createStore } from 'zustand'
+import { create } from 'zustand'
 import { persist } from 'zustand/middleware';
 
 type UserInfoStoreState = {
@@ -19,7 +19,7 @@ type UserInfoStoreActions = {
 
 type UserInfoStore = UserInfoStoreState & UserInfoStoreActions
 
-export const userInfoStore = createStore<UserInfoStore>()(
+export const userInfoStore = create<UserInfoStore>()(
     persist(
         (set) => ({
             userInfo: {

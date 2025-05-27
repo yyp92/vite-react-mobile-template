@@ -1,6 +1,5 @@
 import React from 'react'
 import {Button, Input} from 'antd-mobile'
-import { useStore } from 'zustand'
 import {useNavigate, useLocation} from 'react-router-dom'
 import { userInfoStore } from '@/store/login'
 import styles from './index.module.scss'
@@ -10,7 +9,7 @@ const Home = () => {
      const {
         userInfo,
         setUserInfo
-    } = useStore(userInfoStore)
+    } = userInfoStore()
 
     return (
         <div className={styles.box}>
