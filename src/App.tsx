@@ -1,21 +1,15 @@
-import { useState } from 'react'
-import DEMO from './pages/demo'
-import './App.css'
+import ReactDOM from 'react-dom/client'
+import {Layout} from '@/components/layout'
 
-function App() {
-  const [env] = useState(process.env.NODE_ENV)
+import './app.scss'
 
-  return (
-    <>
-      {env}
-
-      <div>
-        'VITE_APP_URL': {import.meta.env.VITE_APP_URL}
-      </div>
-      
-      <DEMO />
-    </>
-  )
+const App = () => {
+    return (
+        <Layout />
+    )
 }
 
-export default App
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+    <App />
+)
