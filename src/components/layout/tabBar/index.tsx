@@ -18,7 +18,12 @@ const TabBar: FC<TabBarProps> = () => {
     }, [])
 
     useEffect(() => {
-        setActive(newLocation?.pathname?.slice(1))
+        const newPathname = newLocation?.pathname
+        setActive(newPathname?.slice(1))
+
+        if (newPathname === '/') {
+            navigate('home')
+        }
     }, [newLocation])
 
 
