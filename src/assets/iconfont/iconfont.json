@@ -1,0 +1,16 @@
+{
+  "id": "4984079",
+  "name": "项目模板",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "791526",
+      "name": "全屏",
+      "font_class": "quanping",
+      "unicode": "e6e0",
+      "unicode_decimal": 59104
+    }
+  ]
+}
