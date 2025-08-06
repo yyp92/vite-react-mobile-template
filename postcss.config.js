@@ -6,7 +6,7 @@ module.exports = {
 
         // 移动端适配
         'postcss-px-to-viewport': {
-            //视窗的宽度，对应的是我们设计稿的宽度，一般是750
+            // * 视窗的宽度，对应的是我们设计稿的宽度，一般是750
             viewportWidth: 750,
             // 视窗的高度，根据750设备的宽度来指定，一般指定1334，也可以不配置  
             viewportHeight: 1334,
