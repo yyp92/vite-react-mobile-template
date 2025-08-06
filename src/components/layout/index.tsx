@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import zhCN from 'antd-mobile/es/locales/zh-CN'
 import { ConfigProvider } from 'antd-mobile'
@@ -12,9 +12,18 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({}) => {
+    const [newRouterConfig, setNewRouterConfig] = useState<RouterConfigItemProps[]>([])
+
     useEffect(() => {
         getDarkTheme(0)
     }, [])
+
+    useEffect(() => {
+        // todo 将来是请求接口来做权限限制路由的，并且把权限储存在状态管理中
+        // todo 根据权限来生成本地的路由配置
+        setNewRouterConfig(routerConfig)
+    }, [routerConfig])
+
 
     // ********** 操作 **********
     // 主题切换
@@ -35,7 +44,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
 
     // ********** 渲染 **********
     const renderRouterItem = () => {
-        return routerConfig
+        return newRouterConfig
             .filter((item: RouterConfigItemProps) => !item?.showFullScreen)
             .map((item: RouterConfigItemProps, index: number) => {
                 if (item.key === '*') {
@@ -68,7 +77,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
     }
 
     const renderContent = () => {
-        const list = routerConfig.filter((item: RouterConfigItemProps) => item?.showFullScreen)
+        const list = newRouterConfig.filter((item: RouterConfigItemProps) => item?.showFullScreen)
 
         return (
             <Routes>

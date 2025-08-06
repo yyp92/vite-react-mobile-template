@@ -8,13 +8,15 @@ type UserInfoStoreState = {
     userInfo: {
         userId: string,
         userName: string
-    }
+    },
+    token: string
 }
 
 type UserInfoStoreActions = {
     setUserInfo: (
         nextUserInfo: UserInfoStoreState['userInfo']
-    ) => void
+    ) => void,
+    setToken: (token: string) => void
 }
 
 type UserInfoStore = UserInfoStoreState & UserInfoStoreActions
@@ -26,7 +28,9 @@ export const userInfoStore = create<UserInfoStore>()(
                 userName: '小明',
                 userId: '111'
             },
-            setUserInfo: (userInfo) => set({userInfo})
+            token: '',
+            setUserInfo: (userInfo) => set({userInfo}),
+            setToken: (token) => set({token})
         }),
         {
             name: 'userInfo-local'
